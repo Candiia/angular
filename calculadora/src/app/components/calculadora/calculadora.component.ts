@@ -7,16 +7,21 @@ import { Component } from '@angular/core';
 })
 export class CalculadoraComponent {
 
-  result = '0';
+  result = '';
 
-  addNumero(value: string){
-    if(this.result === '0'){
-
-    }else{
-      
-    }
+  addNumero(num: number) {
+    this.result += num.toString();
   }
 
+  addSigno(signo: String) {
+    this.result += signo
+  }
 
+  limpiar() {
+    this.result = '';
+  }
 
+  operaciones() {
+    this.result = eval(this.result);
+  }
 }
