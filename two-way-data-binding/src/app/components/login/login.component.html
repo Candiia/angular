@@ -1,0 +1,22 @@
+<!-- 1. property binding: print value in a content place 
+We use  
+-->
+<p>{{variable}}</p> 
+
+<!-- 2.  Property binding: It's posible to apply the varibale value inside an element atributte-->
+ <img [src]="imgUrl" alt="">   
+ <!-- Esto  hace que sea dinámica -->
+
+ <!-- 3. Event binding: la comunicación se realiza en el sentido contrario al properti  binding
+    es decir ahora la informacion viaja desd el html al TS y para hacer dicha cominicacion se utiliza eventos activados por el usuario.
+    Utilizamos por parentesis pata el data binding.
+ -->
+ <button (click)="showUserInfor()">Show user info</button>
+
+ <!-- 4. Two way data binding: Se utiliza la sintacis 'banana in a box' 
+  >>> [()]  
+ -->
+<br>
+ <input [(ngModel)]="nombre">
+
+ valor de la variable: {{nombre}}
