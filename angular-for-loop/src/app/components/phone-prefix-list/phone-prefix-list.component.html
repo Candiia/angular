@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <table>
+                <thead>
+                    <th>Country</th>
+                    <th>Phone Prefix</th>
+                </thead>
+
+                <tbody>
+                    @for (country of countryPhoneList; track country.name) {
+                        <tr>
+                            <td>
+                                <img [src]="getFlagImage(country.flag)"> {{country.name}}
+                            </td>
+                        </tr>
+                    }
+                   <td></td> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
