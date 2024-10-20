@@ -1,8 +1,4 @@
-import { Component, Input, signal } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { FormControl, Validators } from '@angular/forms';
-import { merge } from 'rxjs';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -11,16 +7,16 @@ import { merge } from 'rxjs';
 
 })
 export class LoginComponent {
- 
+
   email = '';
   contraseya = '';
-  
 
-  login(){
+
+  login() {
     console.log(this.email);
     console.log(this.contraseya)
   }
 
-  constructor() {}
+  constructor() { }
 
 }
