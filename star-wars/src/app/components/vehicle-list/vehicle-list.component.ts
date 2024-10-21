@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../../services/vehicle.service';
-import { VehicleList } from '../../interfaces/vehicle.interface';
+import { VehicleListResponse } from '../../interfaces/vehicle.interface';
 
 @Component({
   selector: 'app-vehicle-list',
@@ -9,7 +9,8 @@ import { VehicleList } from '../../interfaces/vehicle.interface';
 })
 export class VehicleListComponent implements OnInit {
 
-  listado: VehicleList = { count: 0, next: '', previous: 3, results: [] };
+
+  listado: VehicleListResponse = { count: 0, next: '', previous: 3, results: [] };
 
   constructor(private vehicleService: VehicleService) { }
 
@@ -18,4 +19,5 @@ export class VehicleListComponent implements OnInit {
       this.listado = respuesta;
     });
   }
+
 }

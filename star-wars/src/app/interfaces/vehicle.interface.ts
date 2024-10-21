@@ -1,4 +1,4 @@
-export interface VehicleList {
+export interface VehicleListResponse {
   count: number
   next: string
   previous: any
