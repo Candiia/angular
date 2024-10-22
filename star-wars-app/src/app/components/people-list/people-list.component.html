@@ -2,10 +2,11 @@
 <div class="row">
   @for (v of peopleList; track v.url.split("/")[5]) {
   <div class="col-md-3 col-12">
-    <div class="card" style="width: 18rem;">
+    <div class="card mb-3 mt-3" style="width: 18rem;">
       <div class="card-body">
+        <img [src]="'https://starwars-visualguide.com/assets/img/characters/' + v.url.split('/')[5] + '.jpg'" class="card-img-top" alt="{{ v.name }}">        
         <h5 class="card-title">{{v.name}}</h5>
-        <p class="card-text">{{v.created}}</p>
+        <p class="card-text">{{v.eye_color}}</p>
       </div>
     </div>
   </div>

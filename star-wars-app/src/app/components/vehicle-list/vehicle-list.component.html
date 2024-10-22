@@ -4,6 +4,7 @@
   <div class="col-md-3 col-12">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
+        <img [src]="'https://starwars-visualguide.com/assets/img/vehicles/' + v.url.split('/')[5] + '.jpg'" class="card-img-top" alt="{{ v.name }}">        
         <h5 class="card-title">{{v.name}}</h5>
         <p class="card-text">{{v.model}}</p>
         <p class="card-text">{{v.cargo_capacity}}</p>
