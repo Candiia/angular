@@ -1,0 +1,15 @@
+<h1 class="text-center mt-2">Vehicles</h1>
+<div class="row">
+  @for (v of vehicleList; track v.url.split("/")[5]) {
+  <div class="col-md-3 col-12">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{v.name}}</h5>
+        <p class="card-text">{{v.model}}</p>
+        <p class="card-text">{{v.cargo_capacity}}</p>
+        <p class="card-text">{{v.created}}</p>
+      </div>
+    </div>
+  </div>
+  }
+</div>
