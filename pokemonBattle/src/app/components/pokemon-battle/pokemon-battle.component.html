@@ -1,8 +1,25 @@
 <div class="container">
-    <div class="row">
-      @for(pokemon of listPokemon; track pokemon.url.split('/')[5]) {
-      <div class="col-3">
-        <app-pokemon-detail [pokemon]="pokemon"></app-pokemon-detail>
-      </div>
-      }
+  <h1 class="text-center">Turno de: {{turnoActual === 'pokemon1' ? pokemon1?.name : pokemon2?.name}}</h1>
+
+  <div class="row d-flex justify-content-center mt-5">
+    @if (pokemon1) {
+    <div class="col-4">
+      <app-pokemon-detail
+        [pokemon]="pokemon1"
+        (pokemonAtaque)="turnoActual === 'pokemon1' && atacar()"
+        [isDisabled]="isAttacking || turnoActual !== 'pokemon1'">
+      </app-pokemon-detail>
     </div>
+    }
+
+    @if (pokemon2) {
+    <div class="col-4">
+      <app-pokemon-detail
+        [pokemon]="pokemon2"
+        (pokemonAtaque)="turnoActual === 'pokemon2' && atacar()"
+        [isDisabled]="isAttacking || turnoActual !== 'pokemon2'">
+      </app-pokemon-detail>
+    </div>
+    }
+  </div>
+</div>

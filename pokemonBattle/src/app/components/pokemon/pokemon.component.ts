@@ -1,6 +1,7 @@
-import { Component,EventEmitter,Input, Output} from '@angular/core';
+import { Component, EventEmitter, input, Input, Output } from '@angular/core';
 import { Pokemon } from '../../models/pokemon-list.interface';
 import { PokemonDetailResponse } from '../../models/pokemon-detail.interface';
+import { PokemonBattleService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -11,13 +12,12 @@ export class PokemonDetailComponent {
 
 
   @Input() pokemon: Pokemon | undefined;
-  @Input() onePokemon: PokemonDetailResponse | undefined;
-  @Output() pokemonAtaque = new EventEmitter<string>();
+  @Output() pokemonAtaque = new EventEmitter<void>();
+  @Input() isDisabled: boolean = false;
 
-
-  atacar(atacarPokemon: Pokemon | undefined) {
-    console.log('ataque:', atacarPokemon);
-    this.pokemonAtaque.emit(atacarPokemon?.url.split('/')[5]);
+  atacar(): void {
+    if (!this.isDisabled) {
+      this.pokemonAtaque.emit();
+    }
   }
-
 }
