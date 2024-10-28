@@ -4,7 +4,7 @@
   <div class="col-md-3 col-12">
     <div class="card mb-3 mt-3" style="width: 18rem;">
       <div class="card-body">
-        <img [src]="'https://starwars-visualguide.com/assets/img/characters/' + v.url.split('/')[5] + '.jpg'" class="card-img-top" alt="{{ v.name }}">        
+        <img [src]="'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/' + v.url.split('/')[5].padStart(3, '0') + '.png'" class="card-img-top" alt="{{ v.name }}">        
         <h5 class="card-title">{{v.name}}</h5>
         <p class="card-text">{{v.eye_color}}</p>
       </div>
