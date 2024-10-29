@@ -25,7 +25,7 @@ export class PokemonBattleComponent {
 
   getRandomPokemons(): void {
     if (this.listPokemon.length > 1) {
-      const indices = this.getTwoRandomIndices(this.listPokemon.length);
+      const indices = this.getTwoRandom(this.listPokemon.length);
       this.pokemon1 = this.listPokemon[indices[0]];
       this.pokemon2 = this.listPokemon[indices[1]];
     }
@@ -39,7 +39,7 @@ export class PokemonBattleComponent {
     }
   }
 
-  private getTwoRandomIndices(max: number): [number, number] {
+  private getTwoRandom(max: number): [number, number] {
     let index1 = Math.floor(Math.random() * max);
     let index2 = Math.floor(Math.random() * max);
     while (index1 === index2) {
