@@ -9,6 +9,7 @@ import {
 import { PokemonService } from '../../services/pokemon.service';
 import { PokemonResponse } from '../../models/pokemon-response.interface';
 import { AnimationOptions } from 'ngx-lottie';
+import { ImgPokemonPipe } from '../../piper/img-pokemon.pipe';
 
 @Component({
   selector: 'app-pokemon',
@@ -20,6 +21,7 @@ export class PokemonComponent implements OnInit {
     path: '/assets/animation_explosion.json',
   };
 
+  imgPokemon: string = '';
   @Input() pokemonId: number | undefined;
   pokemon: PokemonResponse | undefined;
   @Input() life: number = 100;
@@ -28,7 +30,7 @@ export class PokemonComponent implements OnInit {
   showAnimation: boolean = false;
   @Output() onDefeat = new EventEmitter<void>();
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService, private img: ImgPokemonPipe) { }
 
   ngOnInit(): void {
     this.pokemonService
@@ -36,6 +38,8 @@ export class PokemonComponent implements OnInit {
       .subscribe((pokemonResponse) => {
         this.pokemon = pokemonResponse;
       });
+
+      this.imgPokemon = this.img.transform(this.imgPokemon);
   }
 
   ngOnChanges(changes: SimpleChanges) {
