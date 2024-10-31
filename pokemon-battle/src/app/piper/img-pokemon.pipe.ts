@@ -6,8 +6,8 @@ import { PokemonResponse } from '../models/pokemon-response.interface';
 })
 export class ImgPokemonPipe implements PipeTransform {
 
-  transform(pokemon: number): string {
-    return `'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+ ${pokemon}'.png'`;
+  transform(idPokemon:  string): string {
+    return `'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+ ${idPokemon}'.png'`;
   }
 
 }

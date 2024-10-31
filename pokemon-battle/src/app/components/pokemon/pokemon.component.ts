@@ -21,7 +21,7 @@ export class PokemonComponent implements OnInit {
     path: '/assets/animation_explosion.json',
   };
 
-  imgPokemon: string = '';
+  imgPokemon: string | undefined;
   @Input() pokemonId: number | undefined;
   pokemon: PokemonResponse | undefined;
   @Input() life: number = 100;
