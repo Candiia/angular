@@ -1,4 +1,4 @@
-export class AlumnoDto{
+export class AlumnoDto {
     constructor(
         public name: string,
         public lastName: string,
@@ -9,5 +9,7 @@ export class AlumnoDto{
         public sex: string,
         public metPage: string,
         public password: string,
-    ){}
+        public password2: string,
+
+    ) { }
 }
